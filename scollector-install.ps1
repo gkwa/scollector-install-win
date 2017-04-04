@@ -105,13 +105,8 @@ if (Get-WmiObject win32_service |
     $is_service_installed = $true
 }
 
-do {
-    Get-Process |
-	  Where-Object { $_.Name -like '*scollector*' } |
-      Stop-Process -force
-	  Sleep -s 0.25
-}
-while (Get-Process | Where-Object { $_.Name -like '*scollector*' })
+Function Get-SCP { Get-Process | Where-Object { $_.Name -like '*scollector*' } }
+do { Get-SCP | Stop-Process -force; Sleep -s 0.25; }while ($(Get-SCP))
 
 if ($need_install) {
 
