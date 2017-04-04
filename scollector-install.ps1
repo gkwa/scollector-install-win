@@ -125,16 +125,17 @@ if ($need_install) {
     }
 }
 
-nssm stop scollector confirm
-nssm remove scollector confirm
 $glob = "${env:SYSTEMDRIVE}/Program*/scollector"
 $install_dir = Get-ChildItem $glob -ea 0 | Select-Object -Last 1 | Select-Object -exp fullname
 $glob = "${env:SYSTEMDRIVE}/Program*/scollector/scollector*.exe"
 $binpath = Get-ChildItem $glob -ea 0 | Select-Object -Last 1 | Select-Object -exp fullname
+
+nssm stop scollector confirm
+nssm remove scollector confirm
 nssm install scollector $binpath
 nssm set scollector Start SERVICE_AUTO_START
 # nssm set scollector AppParameters "-conf $install_dir\scollector.toml"
-nssm set scollector DisplayName "scollector"
+nssm set scollector DisplayName scollector
 nssm set scollector Description "Collect machine statistics to send to bosun"
 nssm set scollector AppDirectory $install_dir
 nssm set scollector AppStderr "$install_dir\scollector.err"
