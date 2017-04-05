@@ -1,7 +1,7 @@
 $uri = 'https://github.com/bosun-monitor/bosun/releases/download/0.5.0/scollector-windows-amd64.exe'
+$install_dir = "${env:ProgramFiles}/scollector"
 if ([IntPtr]::Size -eq 4) {
     $uri = 'https://github.com/bosun-monitor/bosun/releases/download/0.5.0/scollector-windows-386.exe'
-    $install_basedir = ${env:ProgramFiles(x86)}
 }
 $regex_version = '((\d+\.)?(\d+\.)?(\*|\d+))'
 $new_version = [regex]::match($uri, ".*/($regex_version)/").Groups[1].Value
@@ -85,7 +85,6 @@ Name = "^SearchIndexer$"
     Set-Content -Encoding ascii "$tomldir/scollector.toml" -value $conf
 }
 
-$install_basedir = ${env:ProgramFiles}
 
 $glob = "${env:SYSTEMDRIVE}/Program*/scollector/scollector*.exe"
 $binpath = Get-ChildItem $glob -ea 0 | Select-Object -Last 1 | Select-Object -exp fullname
@@ -97,7 +96,6 @@ if ($binpath -ne $null) {
     }
 }
 
-$install_dir = "$install_basedir/scollector"
 put_config_in_dir $install_dir
 
 $is_service_installed = $false
