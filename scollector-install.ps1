@@ -81,6 +81,7 @@ Name = "^SearchIndexer$"
 
     # make sure scollector.toml and scollector-windows-386.exe are siblings
     # scollector-windows-386.exe looks for filename scollector.toml specifically
+    New-Item -Type Directory -Force $tomldir >$null
     Set-Content -Encoding ascii "$tomldir/scollector.toml" -value $conf
 }
 
