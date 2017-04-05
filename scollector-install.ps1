@@ -112,7 +112,7 @@ do { Get-SCP | Stop-Process -force; Sleep -s 0.25; }while ($(Get-SCP))
 if ($need_install) {
 
     mkdir -force $install_dir >$null
-    $scbin = Split-Path $uri -leaf
+    $scbin = Split-Path ([System.Uri]$uri).AbsolutePath -leaf
     if ([Version]$PSVersionTable.PSVersion -ge [Version]"3.0") {
         Invoke-WebRequest -Uri $uri -OutFile "$install_dir/$scbin"
     }
