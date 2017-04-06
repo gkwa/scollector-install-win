@@ -50,7 +50,7 @@ Name = "^service$"
 [[Process]]
 Name = "^Bandwidth$"
 [[Process]]
-Name = "^ifbserver$"
+Name = "^IFBServer$"
 [[Process]]
 Name = "^bash$"
 [[Process]]
