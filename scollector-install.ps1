@@ -20,6 +20,10 @@ function put_config_in_dir {
 Host = "docker.streambox.com:8070"
 
 [[Process]]
+Name = "pmapper" # Streambox activation server relies on port mapping
+[[Process]]
+Name = "ACTSvc" # Streambox activation server
+[[Process]]
 Name = "^EncoderFD1.*"
 [[Process]]
 Name = "^transport[HS]D.*"
@@ -50,7 +54,7 @@ Name = "^service$"
 [[Process]]
 Name = "^Bandwidth$"
 [[Process]]
-Name = "^IFBServer$"
+Name = "^ifbserver$"
 [[Process]]
 Name = "^bash$"
 [[Process]]
@@ -69,6 +73,13 @@ Name = "^putty$"
 Name = "^cmd$"
 [[Process]]
 Name = "^powershell$"
+[[Process]]
+Name = "^SearchIndexer$"
+[[Process]]
+# Driver for Presonus for IFBServer
+Name = "^AudioBox$"
+[[Process]]
+Name = "^nssm$"
 [[Process]]
 Name = "^transcoder$"
 [[Process]]
