@@ -20,6 +20,8 @@ function put_config_in_dir {
 Host = "docker.streambox.com:8070"
 
 [[Process]]
+Name = "^LogonUI$"
+[[Process]]
 Name = "pmapper" # Streambox activation server relies on port mapping
 [[Process]]
 Name = "ACTSvc" # Streambox activation server
@@ -57,6 +59,10 @@ Name = "^Bandwidth$"
 Name = "^ifbserver$"
 [[Process]]
 Name = "^bash$"
+[[Process]]
+Name = "^sh$"
+[[Process]]
+Name = "^tmux$"
 [[Process]]
 Name = "^mintty$"
 [[Process]]
