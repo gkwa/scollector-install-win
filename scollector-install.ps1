@@ -87,7 +87,7 @@ Name = "^AudioBox$"
 [[Process]]
 Name = "^nssm$"
 [[Process]]
-Name = "^transcoder$"
+Name = "^(transcoder|Transcoder)$"
 [[Process]]
 Name = "^mplayer$"
 [[Process]]
