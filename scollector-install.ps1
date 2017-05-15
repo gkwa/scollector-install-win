@@ -44,7 +44,7 @@ Name = "^(chrome|firefox|iexplore|opera)$"
 [[Process]]
 Name = "^(MSSQLSERVER|SQLSERVERAGENT)$"
 [[Process]]
-Name = "^scollector$"
+Name = "^scollector"
 [[Process]]
 Name = "^mysqld"
 [[Process]]
