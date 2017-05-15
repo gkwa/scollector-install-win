@@ -32,6 +32,8 @@ Name = "^transport[HS]D.*"
 [[Process]]
 Name = "^httpd$"
 [[Process]]
+Name = "^rotatelogs$"
+[[Process]]
 Name = "^ApacheMonitor$"
 [[Process]]
 Name = "^php$"
