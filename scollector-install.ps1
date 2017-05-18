@@ -70,6 +70,8 @@ Name = "^mintty$"
 [[Process]]
 Name = "^(emacs-nox|emacsclient)$"
 [[Process]]
+Name = "^vim$"
+[[Process]]
 Name = "^sshd$"
 [[Process]]
 Name = "^ssh$"
