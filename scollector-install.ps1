@@ -20,6 +20,8 @@ function put_config_in_dir {
 Host = "docker.streambox.com:8070"
 
 [[Process]]
+Name = "^robocopy$"
+[[Process]]
 Name = "^LogonUI$"
 [[Process]]
 Name = "pmapper" # Streambox activation server relies on port mapping
